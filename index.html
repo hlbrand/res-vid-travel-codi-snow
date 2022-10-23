@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      Responsive Website Landing Page - With Background Video Slider | Travel
+    </title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <a href="#" class="brand">HLbrand</a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="#">Home</a>
+          <a href="#">About</a>
+          <a href="#">Explore</a>
+          <a href="#">Gallery</a>
+          <a href="#">Contact</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="home">
+      <video class="video-slide active" src="1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="5.mp4" autoplay muted loop></video>
+      <div class="content active">
+        <h1>Wonderful.<br /><span>Island</span></h1>
+        <p>
+          Improving your health is possible with a few simple steps. Diet and
+          exercise can improve your energy, mental acuity, and physical
+          well-being by reducing stress and promoting good circulation. The best
+          part is that you can become healthier without spending more money,
+          just by tweaking the way you eat and move around.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Fashion<br /><span>Style</span></h1>
+        <p>
+          Fashion is the one art form that makes you look the way you want to
+          look. And fashion can make any woman feel beautiful, even if she's not
+          sure about her looks or her body. The key to always looking great is
+          finding your own personal style—something that's all yours. And it's
+          something that really comes from inside of you, not from someone else
+          telling you what works on you.
+        </p>
+        <a href="#">Read More</a>
+      </div>
+      <div class="content">
+        <h1>Own Business<br /><span>Startup</span></h1>
+        <p>
+          I believe we as humans are here to serve, not serve us. I want to
+          learn and teach through my abilities in marketing and branding. This
+          is a great opportunity and I appreciate the support from others, who
+          knows what's in store for future?
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="content">
+        <h1>Computer.<br /><span>Development</span></h1>
+        <p>
+          Science and technology have had a deep impact on people's lives. It
+          has become an important part of human development and will continue to
+          make great contributions to the improvement of our society
+        </p>
+        <a href="#">Read More</a>
+      </div>
+
+      <div class="media-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+    </section>
+
+    <script type="text/javascript">
+      //Javacript for responsive navigation menu
+      const menuBtn = document.querySelector('.menu-btn');
+      const navigation = document.querySelector('.navigation');
+
+      menuBtn.addEventListener('click', () => {
+        menuBtn.classList.toggle('active');
+        navigation.classList.toggle('active');
+      });
+
+      //Javacript for video slider navigation
+      const btns = document.querySelectorAll('.nav-btn');
+      const slides = document.querySelectorAll('.video-slide');
+      const contents = document.querySelectorAll('.content');
+
+      var sliderNav = function (manual) {
+        btns.forEach((btn) => {
+          btn.classList.remove('active');
+        });
+
+        slides.forEach((slide) => {
+          slide.classList.remove('active');
+        });
+
+        contents.forEach((content) => {
+          content.classList.remove('active');
+        });
+
+        btns[manual].classList.add('active');
+        slides[manual].classList.add('active');
+        contents[manual].classList.add('active');
+      };
+
+      btns.forEach((btn, i) => {
+        btn.addEventListener('click', () => {
+          sliderNav(i);
+        });
+      });
+    </script>
+  </body>
+</html>
